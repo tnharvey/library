@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Library</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+</head>
+
+<body>
+  <main>
+    <h1 class="page-title">ErNe Library Project</h1>
+  <div class="container">
+  </div>
+  <a class="add-button" href="#form-container" type="button">&plus; new book</a>
+  <div id="form-container" class="book-card">
+    <div class="card-top-left"></div>
+    <div class="card-top"></div>
+    <div class="card-left"></div>
+    <form id="newBookForm" class="card-body">
+      <label for="bookTitle">Book Title:</label><input id="bookTitle" type="text" placeholder="Enter the book's title">
+      <label for="bookAuthor">Author:</label><input id="authorTitle" type="text" placeholder="Enter the book's author">
+      <label for="bookPages">Number of Pages</label><input id="bookPages" type="number" min="1" max="10000" placeholder="pages">
+      <label for="bookStatus">Have you finished reading this book?</label>
+      <div class="side-label"></div>
+      <input id="bookStatus" type="checkbox">
+      <input id="submitForm" type="submit">
+    </form>
+  </div>
+  <a href="#" class="close-form"></a>
+  </main>
+  
+  <footer>
+    <p>created by <a href="https://github.com/tnharvey/" target="_blank">Neal</a> and <a href="https://github.com/ey-jay" target="_blank">Erick</a></p>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>

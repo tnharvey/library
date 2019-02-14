@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+:root {
+  --light-bg: #FCFAFA;
+  --bg-grad-1: #E9EB9E;
+  --bg-grad-2: #ACC196;
+  --med-accent: #E9EB9E;
+  --intense-accent: #DD5349;
+  --med-highlight: #97C1B2;
+  --dark-hightlight: #394647;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(120deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 70%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+p, a, label, button {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+footer a {
+  color: var(--bg-grad-1);
+  text-decoration: none;
+}
+
+footer a:visited {
+  color: var(--bg-grad-2);
+}
+
+.page-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  margin: 0 20px;
+  text-transform: capitalize;
+  justify-items: center;
+}
+
+.book-card {
+  height: auto;
+  width: 400px;
+  background-color: var(--light-bg);
+  display: grid;
+  border-radius: 2px;
+  grid-template-columns: 75px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+      "card-top-left card-top"
+      "card-left card-body";
+}
+
+.card-top-left {
+  grid-area: card-top-left;
+  height: 1fr;
+  border-right: 1px solid var(--intense-accent);
+  border-bottom: 1px solid var(--med-highlight);
+}
+
+.card-top {
+  grid-area: card-top;
+  display: grid;
+  border-bottom: 1px solid var(--med-highlight);
+  align-items: end;
+  justify-items: start;
+  padding: 8px;
+}
+
+.card-top > p {
+  text-align: center;
+}
+
+.card-left {
+  grid-area: card-left;
+  border-right: 1px solid var(--intense-accent);
+}
+
+.card-body {
+  grid-area: card-body;
+  justify-self: stretch;
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "title" 
+                       "author" 
+                       "pages" 
+                       "status";
+  text-transform: capitalize;
+  padding: 6px 8px;
+  padding-bottom: 30px;
+}
+
+.author {
+  grid-area: author;
+}
+
+.pages {
+  grid-area: pages;
+}
+
+.status {
+  grid-area: status;
+  color: var(--med-highlight);
+  border: 1px solid var(--dark-hightlight);
+  border-radius: 2px;
+  justify-self: start;
+  padding: 5px;
+  margin-top: 4px;
+}
+
+.status:hover {
+  cursor: pointer;
+}
+
+.card-body > button {
+    justify-self: end;
+}
+
+.not-read {
+  color: var(--intense-accent);
+}
+
+button > .far {
+  font-size: 1.2em;
+}
+
+.add-button {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  border: 2px solid #394647;
+  border-radius: 3px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  color: #FCFAFA;
+  align-self: center;
+}
+
+#form-container{
+  position: fixed;
+  width: 40%;
+  margin: 0 auto;
+  top: 25%;
+  bottom: 25;
+  left: 25%;
+  right: 25%;
+  visibility: hidden;
+  z-index: 2;
+  opacity: 1;
+}
+
+#form-container:target{
+  visibility: visible;
+  opacity: 1;
+}
+
+.close-form {
+  background: rgba(0,0,0,.7);
+  cursor: default;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#form-container:target + .close-form {
+  opacity: 1;
+  visibility: visible;
+}
+
+#newBookForm {
+ padding: 10px;
+}
+
+#newBookForm > input {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  border: 1px solid var(--dark-hightlight);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9em;
+}
+
+#newBookForm > input:focus {
+  outline-color: transparent;
+  outline-style: none;
+  -moz-box-shadow:    2px 2px 3px (--bg-grad-2);
+  -webkit-box-shadow: 2px 2px 3px (--bg-grad-2);
+  box-shadow: 2px 2px 3px var(--bg-grad-2);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  background-color: #394647;
+  color: #FCFAFA;
+  padding: 15px;
+  flex-shrink: 0;
+}
