@@ -10,6 +10,16 @@
   --dark-hightlight: #394647;
 }
 
+@media only screen and (max-width: 900px) {
+  #form-container {
+    width: 60% !important;
+    /*top: 25%;
+    bottom: 25;
+    left: 25%;
+    right: 25%;*/
+  }
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -200,6 +210,7 @@ button > .far {
   margin-top: 4px;
   margin-bottom: 8px;
   padding: 5px;
+  width: auto;
   border: 1px solid var(--dark-hightlight);
   font-family: 'Lato', sans-serif;
   font-size: 0.9em;
