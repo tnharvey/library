@@ -23,7 +23,7 @@ function addBookToLibrary(e) {
   let readStatus = e.target[3].checked;
   let book = new Book(bookTitle, bookAuthor, bookPages, readStatus);
   firebase.database().ref().push(book);
-  window.location.replace('library/#');
+  window.location.replace('#');
 }
 
 function processForm(e) {
